@@ -38,6 +38,6 @@ jobs:
           mkdir package
           unzip *.whl -d package
       - name: run analysis
-        run:
+        run: |
           scancode -l --license-text --license-text-diagnostics --yaml output.yml package/
           cat output.yml
