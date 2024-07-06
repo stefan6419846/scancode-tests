@@ -41,3 +41,8 @@ jobs:
         run: |
           scancode -l --license-text --license-text-diagnostics --yaml output.yml package/
           cat output.yml
+      - name: run in subprocess
+        run: |
+          python -c "import subprocess; import sys; subprocess.run(['scancode', '-l', '--license-text', '--license-text-diagnostics', '--yaml', 'output1.yml', 'package/'])"
+          cat output1.yml
+  
